@@ -33,10 +33,10 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
 
-  int questionNumber = 0;
 
   @override
   Widget build(BuildContext context) {
+    int questionNumber = 0;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -68,7 +68,7 @@ class _QuizPageState extends State<QuizPage> {
                   print('user got it wrong');
                 }
                 setState(() {
-                  questionNumber++;
+                  quizBrain.nextQuestion();
                 });
               },
               style: ButtonStyle(
@@ -95,7 +95,7 @@ class _QuizPageState extends State<QuizPage> {
                   print('user got it right');
                 }
                 setState(() {
-                  questionNumber++;
+                 quizBrain.nextQuestion();
                 });
               },
               style: ButtonStyle(
